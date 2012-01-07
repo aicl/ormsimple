@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC4297D2-E26F-41D0-AD03-71367B148F76}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Maquinaria</RootNamespace>
+    <AssemblyName>Maquinaria</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=2.6.5.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\lib\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="src\Users.cs" />
+    <Compile Include="src\Ubicacion.cs" />
+    <Compile Include="src\TestTable.cs" />
+    <Compile Include="src\Table3.cs" />
+    <Compile Include="src\Tabla2.cs" />
+    <Compile Include="src\Sitio.cs" />
+    <Compile Include="src\Sales.cs" />
+    <Compile Include="src\SalaryHistory.cs" />
+    <Compile Include="src\Responsable.cs" />
+    <Compile Include="src\Project.cs" />
+    <Compile Include="src\ProjDeptBudget.cs" />
+    <Compile Include="src\MiTabla.cs" />
+    <Compile Include="src\Job.cs" />
+    <Compile Include="src\Foa.cs" />
+    <Compile Include="src\Estado.cs" />
+    <Compile Include="src\EmployeeProject.cs" />
+    <Compile Include="src\Employee.cs" />
+    <Compile Include="src\Department.cs" />
+    <Compile Include="src\Customer.cs" />
+    <Compile Include="src\Country.cs" />
+    <Compile Include="src\Company.cs" />
+    <Compile Include="src\Categoria.cs" />
+    <Compile Include="src\Bienes.cs" />
+    <Compile Include="src\Materialsuc.cs" />
+    <Compile Include="src\Concepto.cs" />
+    <Compile Include="src\Kardex.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceStack.OrmSimple\ServiceStack.OrmSimple.csproj">
+      <Project>{0F937D3D-88F7-46C1-85E6-897A5C708C2D}</Project>
+      <Name>ServiceStack.OrmSimple</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceStack.OrmSimple.Firebird\ServiceStack.OrmSimple.Firebird.csproj">
+      <Project>{747B1A31-73DA-405D-955D-BB929FA5E6C0}</Project>
+      <Name>ServiceStack.OrmSimple.Firebird</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="bin\Debug\src\" />
+  </ItemGroup>
+</Project>
