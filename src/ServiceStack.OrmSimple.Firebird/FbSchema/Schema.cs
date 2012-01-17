@@ -11,12 +11,6 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace ServiceStack.OrmSimple.Firebird
 {
-	public class CustomFirebirdProvider: FirebirdDialectProvider{
-		public override string ToSelectStatement(Type tableType, string sqlFilter, params object[] filterParams){
-			Console.WriteLine(" To SelectStament...........");
-			return "";
-		}
-	}
 	
 	public class Schema:ISchema<Table,Column,Procedure,Parameter>
 	{
@@ -151,7 +145,7 @@ namespace ServiceStack.OrmSimple.Firebird
 			
 			
 			sqlColumns.Append("SELECT TRIM(r.rdb$field_name)                          AS field_name, \n");
-			sqlColumns.Append("       r.rdb$field_position                            AS field_posistion, \n");
+			sqlColumns.Append("       r.rdb$field_position                            AS field_position, \n");
 			sqlColumns.Append("       CASE f.rdb$field_type \n");
 			sqlColumns.Append("         WHEN 261 THEN " +
 				              "         trim(iif(f.rdb$field_sub_type = 0,'BLOB', 'TEXT')) \n");
@@ -273,7 +267,7 @@ namespace ServiceStack.OrmSimple.Firebird
 				get; set;
 			}
 			
-			[Alias("SEQUENCE_NAME ")]
+			[Alias("SEQUENCE_NAME")]
 			public string SequenceName{
 				get; set;
 			}
